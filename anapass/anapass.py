@@ -96,16 +96,16 @@ class PasswordOracle(object):
         
         # charsetlen = 26, passlen = 3 returns: 26**1 + 26**2 + 26**3
         return sum([charsetlen ** (x + 1) for x in xrange(passwordlen)])
-        
+
     def is_known_word(self, password):
-        """Checks password against wordlist."""
+        """Checks if password is a common word in wordlists"""
         
         if password in self.password_list:
             return True
         
         return False
-
-    def analyze_brute(self, password):
+    
+    def give_grade(self, password):
         """Analyze the strength of password against bruteforce.
         Returns a word to describe password"""
         
@@ -133,6 +133,10 @@ class PasswordOracle(object):
         
         else:
             grade = "useless"
+
+        if len(self.password_list):
+            if self.is_known_word(password):
+                grade = "useless(COMMON WORD, WAS FOUND IN WORDLIST!)"
 
         self.log.log('"%s" = %s'%(password, grade.upper()))
     
@@ -175,13 +179,7 @@ class PasswordOracle(object):
         for word in words:
 
             self.log.log('Analyzing password "%s" (length = %s)'% (word, len(word)))
-
-            if len(self.password_list) > 0:
-                
-                if self.is_known_word(word):
-                    self.log.log('"%s" is a known word!'%word)
-
-            self.analyze_brute(word)    
+            self.give_grade(word)    
             
             print('')
 
