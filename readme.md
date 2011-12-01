@@ -2,7 +2,7 @@
 
 Clone git repository to your computer
 
-`git clone `
+`git clone git://github.com/kimbledon/anapass.git`
 
 Program is run with command
 
