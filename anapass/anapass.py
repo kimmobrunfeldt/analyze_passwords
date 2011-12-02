@@ -147,13 +147,12 @@ class PasswordOracle(object):
         """Returns integer of password charsetlen"""
         
         charsets = [
-            string.ascii_lowercase,  # len=26
-            string.ascii_uppercase,  # len=26
-            string.digits,           # len=10
-            "!_.?%* ",               # len=7
-            "'\"#$@/&()=[]\,+-_",    # len=17
-            ":;<>^`{|}~",            # len=10
-            "öäå",                   # len=3
+            string.ascii_lowercase,            # len=26
+            string.ascii_uppercase,            # len=26
+            string.digits,                     # len=10
+            "!?",                              # len=2
+            "-.%*'\"#$@/&()=[]\,+_:;<>^`{|}~ ",# len=31
+            "öäå",                             # len=3
         ]
         
         used_sets = [False] * len(charsets)  # To determine already added sets.
