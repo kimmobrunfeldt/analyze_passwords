@@ -152,6 +152,7 @@ class PasswordOracle(object):
             string.digits,           # len=10
             "!_.?%* ",               # len=7
             "'\"#$@/&()=[]\,+-_",    # len=17
+            ":;<>^`{|}~",            # len=10
             "öäå",                   # len=3
         ]
         
