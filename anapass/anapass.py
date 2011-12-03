@@ -12,8 +12,8 @@ import logger
 import sys
 
 # How many hashes can be generated in second
-HASH_PER_SEC = 10**6 * 600  # 600 million.
-# http://www.elcomsoft.com/lhc.html -> With a few GPUs this cracking speed is possible.
+HASH_PER_SEC = 10**9 * 30 # 30 milliard
+# http://hashcat.net/oclhashcat-plus/#tested-gpu -> With 8 GPUs this cracking speed is possible.
 
 # That's why it is being multiplied by 5 (I bet a group of crackers can do
 # even better)

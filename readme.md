@@ -22,8 +22,9 @@ Program creates a few additions to the wordlists: original words with ! added in
 
 ## Calculations
 
-I looked at newest MD5 cracking tools and their cracking speed. For example: http://www.elcomsoft.com/lhc.html
-With NVIDIA 9800GX2, you could create 608 million MD5 hashes per second.
+I looked at newest MD5 cracking tools and their cracking speed. For example: http://hashcat.net/oclhashcat-plus/#tested-gpu
+With Ubuntu 10.10, 64 bitCatalyst 11.6 + Stream SDK v2.48x ATI hd6970,
+you could create 26122 million MD5 hashes per second.
 
 The program estimates the bruteforcing times with following formula:
 
