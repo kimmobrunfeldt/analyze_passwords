@@ -59,12 +59,9 @@ class PasswordOracle(object):
 
         self.log = logger.Logger(time.time())
         self.read_wordlists(wordlist_files)
-        self.modify_wordlist()
         
-        if len(self.password_list) == 0:
-            self.log.log('Wordlist is empty!')
-        
-        else:
+        if len(self.password_list) > 0:
+            self.modify_wordlist()
             self.log.log('Sorting wordlist.. ')
             self.password_list.sort()
             self.log.log('Sorted.')
