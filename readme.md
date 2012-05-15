@@ -4,9 +4,9 @@ Clone git repository to your computer
 
 `git clone git://github.com/kimbledon/anapass.git`
 
-Program is run with command
+Run with command(wordlists are optional):
 
-`python anapass.py analyze_these.txt wordlists/*`
+`python anapass.py analyze_these.txt [wordlists/*]`
 
 # Main purpose
 
@@ -28,12 +28,16 @@ you could create 26122 million MD5 hashes per second.
 
 The program estimates the bruteforcing times with following formula:
 
-`ALL_PASSWORD_COMBINATIONS / HASHES_PER_SECOND`
+`ALL_PASSWORD_COMBINATIONS / HASHES_PER_SECOND / 2`
 
-If password's length is 3, all password combinations are calculated with following formula
+Time is divided by 2 because on average, testing half of the combinations is enough to crack the password.
+
+If password's length was 3, all password combinations would be calculated with the following formula
 
 `charsetlen^1 + charsetlen^2 + charsetlen^3`
 
-If password consists from a-z letters all combinations would be
+If password consisted from a-z letters, all combinations would be
 
 `26^1 + 26^2 + 26^3 = 18278`
+
+Also the entropy of the password is calculated with the formula given in http://en.wikipedia.org/wiki/Password_strength
