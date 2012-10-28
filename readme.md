@@ -1,3 +1,8 @@
+# Warning
+
+This program is overly optimistic in its approximations! There are many ways to make cracking even faster. 
+If your password is bad according to this program, in reality it sucks.
+
 # Installation
 
 Clone git repository to your computer
